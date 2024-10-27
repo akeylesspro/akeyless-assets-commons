@@ -2,7 +2,7 @@
     "name": "akeyless-assets-commons",
     "version": "1.0.0",
     "scripts": {
-        "build": "tsc",
+        "build": "tsup src/index.tsx --format esm,cjs --dts",
         "deploy": "npm run build && git add . && git commit -am 'build' && git push origin main",
         "uc": "npm i https://github.com/akeylesspro/akeyless-client-commons.git && npm i git+https://github.com/akeylesspro/akeyless-types-commons.git"
     },
@@ -24,7 +24,7 @@
         "autoprefixer": "^10.4.20",
         "postcss": "^8.4.47",
         "tailwindcss": "^3.4.14",
-        "tsup": "^8.3.0",
+        "tsup": "^8.3.5",
         "typescript": "^5.6.3"
     },
     "main": "./dist/index.js",
