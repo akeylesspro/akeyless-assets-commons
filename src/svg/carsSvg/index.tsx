@@ -1,14 +1,16 @@
-import { calculateBearing } from "../functions/helpers";
-import { grayCraneIcon, greenCraneIcon } from "./carsSvg/cranes2";
-import { redCraneIcon, yellowCraneIcon } from "./carsSvg/cranes1";
-import { grayBusIcon, greenBusIcon, redBusIcon, yellowBusIcon } from "./carsSvg/buss";
-import { grayCarIcon, greenCarIcon, redCarIcon, yellowCarIcon } from "./carsSvg/cars";
-import { grayJeepIcon, greenJeepIcon, redJeepIcon, yellowJeepIcon } from "./carsSvg/jeeps";
-import { grayTruckIcon, greenTruckIcon, redTruckIcon, yellowTruckIcon } from "./carsSvg/trucks";
-import { grayScooterIcon, greenScooterIcon, redScooterIcon, yellowScooterIcon } from "./carsSvg/scooters";
-import { grayBicycleIcon, greenBicycleIcon, redBicycleIcon, yellowBicycleIcon } from "./carsSvg/bicycles";
-import { grayForkliftIcon, greenForkliftIcon, redForkliftIcon, yellowForkliftIcon } from "./carsSvg/forklifts";
-import { grayMotorcycleIcon, greenMotorcycleIcon, redMotorcycleIcon, yellowMotorcycleIcon } from "./carsSvg/motorcycles";
+import { calculateBearing } from "akeyless-client-commons/helpers";
+import { grayCraneIcon, greenCraneIcon } from "./cranes2";
+import { redCraneIcon, yellowCraneIcon } from "./cranes1";
+import { grayBusIcon, greenBusIcon, redBusIcon, yellowBusIcon } from "./buss";
+import { grayCarIcon, greenCarIcon, redCarIcon, yellowCarIcon } from "./cars";
+import { grayJeepIcon, greenJeepIcon, redJeepIcon, yellowJeepIcon } from "./jeeps";
+import { grayTruckIcon, greenTruckIcon, redTruckIcon, yellowTruckIcon } from "./trucks";
+import { grayScooterIcon, greenScooterIcon, redScooterIcon, yellowScooterIcon } from "./scooters";
+import { grayBicycleIcon, greenBicycleIcon, redBicycleIcon, yellowBicycleIcon } from "./bicycles";
+import { grayForkliftIcon, greenForkliftIcon, redForkliftIcon, yellowForkliftIcon } from "./forklifts";
+import { grayMotorcycleIcon, greenMotorcycleIcon, redMotorcycleIcon, yellowMotorcycleIcon } from "./motorcycles";
+import { Car, LastLocationCar } from "akeyless-types-commons";
+import { VehicleSvg } from "../../types";
 export const allIcons = {
     car: {
         red: redCarIcon,
@@ -65,7 +67,7 @@ export const allIcons = {
         gray: grayJeepIcon,
     },
 };
-const pointerSvg = (size, filColor, className, degrees) => {
+const pointerSvg = (size: string, filColor: string, className: string, degrees: string | number) => {
     const is_big = className === "newBigIconCar";
     const svgSize = is_big ? `${Number(size) + 65}` : `${Number(size) + 50}`;
     return (
@@ -85,7 +87,7 @@ const pointerSvg = (size, filColor, className, degrees) => {
         </svg>
     );
 };
-export const getVehiclesIcon = (vehicle, isBig, sitesData) => {
+export const getVehiclesIcon = (vehicle: any, isBig: boolean | undefined, sitesData: any) => {
     // get custom inon
     if (vehicle === undefined || isBig === undefined) {
         return <></>;
@@ -96,7 +98,7 @@ export const getVehiclesIcon = (vehicle, isBig, sitesData) => {
     const icon = allIcons[iconType || "car"][iconColor];
     // set args values
     const degrees = calculateBearing(vehicle?.prev_lat, vehicle?.prev_lng, vehicle?.lat, vehicle?.lng);
-    const currentSite = sitesData.find((s) => s.cars.includes(vehicle?.car_number));
+    const currentSite = sitesData.find((s: any) => s.cars.includes(vehicle?.car_number));
     const siteColor = currentSite?.color;
     const className = isBig ? "newBigIconCar" : "newIconCar";
     const size = isBig ? "100" : "30";
@@ -109,9 +111,9 @@ export const getVehiclesIcon = (vehicle, isBig, sitesData) => {
         </>
     );
 };
-export const generateVehicleIconForMenu = (width, height, vehicle, locationCar) => {
+export const generateVehicleIconForMenu = (width: string | number, height: string | number, vehicle: Car, locationCar: LastLocationCar) => {
     const iconType = vehicle?.icon;
-    let isUndefined;
+    let isUndefined: boolean;
     if (locationCar) {
         isUndefined = locationCar.ign === undefined || locationCar.spd === undefined;
     } else {
@@ -119,8 +121,8 @@ export const generateVehicleIconForMenu = (width, height, vehicle, locationCar) 
     }
     const viewBoxFor = "menu_icon";
     const iconColor = isUndefined ? "gray" : locationCar?.ign == 0 ? "red" : locationCar?.spd != 0 ? "green" : "yellow";
-    const icon = allIcons[iconType || "car"][iconColor];
+    const icon: VehicleSvg = allIcons[iconType || "car"][iconColor];
     if (!vehicle) {
     }
-    return vehicle ? icon(width, height, undefined, "menu_vehicle_icon", viewBoxFor) : "N/A";
+    return vehicle ? icon(width, height, undefined, "menu_vehicle_icon", viewBoxFor) : <>{"N/A"}</>;
 };
