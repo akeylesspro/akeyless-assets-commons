@@ -28,43 +28,15 @@
         "typescript": "^5.6.3"
     },
     "exports": {
-        "./assets": {
-            "import": "./dist/assets/index.mjs",
-            "require": "./dist/assets/index.js"
-        },
-        "./components": {
-            "import": "./dist/components/index.mjs",
-            "require": "./dist/components/index.js"
-        },
-        "./helpers": {
-            "import": "./dist/helpers/index.mjs",
-            "require": "./dist/helpers/index.js"
-        },
-        "./hooks": {
-            "import": "./dist/hooks/index.mjs",
-            "require": "./dist/hooks/index.js"
-        },
-        "./types": {
-            "import": "./dist/types/index.mjs",
-            "require": "./dist/types/index.js"
+        "*": {
+            "import": "./dist/index.mjs",
+            "require": "./dist/index.js"
         }
     },
     "typesVersions": {
         "*": {
-            "assets": [
-                "./dist/assets/index.d.ts"
-            ],
-            "components": [
-                "./dist/components/index.d.ts"
-            ],
-            "helpers": [
-                "./dist/helpers/index.d.ts"
-            ],
-            "hooks": [
-                "./dist/hooks/index.d.ts"
-            ],
-            "types": [
-                "./dist/types/index.d.ts"
+            "*": [
+                "./dist/index.d.ts"
             ]
         }
     }
