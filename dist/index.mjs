@@ -1,4 +1,4 @@
-// src/svg/carsSvg/index.tsx
+// src/svg/carsSvg/cranes2.tsx
 function _define_property(obj, key, value) {
     if (key in obj) {
         Object.defineProperty(obj, key, {
@@ -51,8 +51,6 @@ function _object_spread_props(target, source) {
     }
     return target;
 }
-import { calculateBearing } from "akeyless-client-commons/helpers";
-// src/svg/carsSvg/cranes2.tsx
 import { jsx, jsxs } from "react/jsx-runtime";
 var greenCraneIcon = function(width, height, siteColor, className, viewBoxFor) {
     return /* @__PURE__ */ jsxs("svg", {
@@ -23693,6 +23691,32 @@ var grayMotorcycleIcon = function(width, height, siteColor, className, viewBoxFo
         ]
     });
 };
+// src/helpers/index.ts
+var formatCarNumber = function(car_number) {
+    var cn = car_number;
+    if ((cn === null || cn === void 0 ? void 0 : cn.length) == 8) return "".concat(cn[0]).concat(cn[1]).concat(cn[2], "-").concat(cn[3]).concat(cn[4], "-").concat(cn[5]).concat(cn[6]).concat(cn[7]);
+    if ((cn === null || cn === void 0 ? void 0 : cn.length) == 7) return "".concat(cn[0]).concat(cn[1], "-").concat(cn[2]).concat(cn[3]).concat(cn[4], "-").concat(cn[5]).concat(cn[6]);
+    if ((cn === null || cn === void 0 ? void 0 : cn.length) == 6) return "".concat(cn[0]).concat(cn[1], "-").concat(cn[2]).concat(cn[3], "-").concat(cn[4]).concat(cn[5]);
+    if ((cn === null || cn === void 0 ? void 0 : cn.length) == 5) return "".concat(cn[0], "-").concat(cn[1]).concat(cn[2], "-").concat(cn[3]).concat(cn[4]);
+    return cn;
+};
+var calculateBearing = function(startLat, startLng, endLat, endLng) {
+    if (startLat === endLat || startLng === endLng) {
+        return 0;
+    }
+    if (startLat === void 0 || startLng === void 0 || endLat === void 0 || endLng === void 0) {
+        return 0;
+    }
+    var startLatRad = startLat * Math.PI / 180;
+    var startLngRad = startLng * Math.PI / 180;
+    var endLatRad = endLat * Math.PI / 180;
+    var endLngRad = endLng * Math.PI / 180;
+    var dLon = endLngRad - startLngRad;
+    var y = Math.sin(dLon) * Math.cos(endLatRad);
+    var x = Math.cos(startLatRad) * Math.sin(endLatRad) - Math.sin(startLatRad) * Math.cos(endLatRad) * Math.cos(dLon);
+    var bearing = Math.atan2(y, x) * 180 / Math.PI;
+    return (bearing + 360) % 360;
+};
 // src/svg/carsSvg/index.tsx
 import { Fragment, jsx as jsx11, jsxs as jsxs11 } from "react/jsx-runtime";
 var allIcons = {
@@ -23810,7 +23834,6 @@ var generateVehicleIconForMenu = function(width, height, vehicle, locationCar) {
     });
 };
 // src/svg/global.tsx
-import { formatCarNumber } from "akeyless-client-commons/helpers";
 import { jsx as jsx12, jsxs as jsxs12 } from "react/jsx-runtime";
 var carMarkerSvg = /* @__PURE__ */ jsx12("svg", {
     xmlns: "http://www.w3.org/2000/svg",

@@ -1,4 +1,4 @@
-import { formatCarNumber } from "akeyless-client-commons/helpers";
+import { formatCarNumber } from "../helpers";
 
 export const carMarkerSvg = (
     <svg xmlns="http://www.w3.org/2000/svg" width="33" height="47" viewBox="0 0 33 47" fill="none">

@@ -1,4 +1,3 @@
-import { calculateBearing } from "akeyless-client-commons/helpers";
 import { grayCraneIcon, greenCraneIcon } from "./cranes2";
 import { redCraneIcon, yellowCraneIcon } from "./cranes1";
 import { grayBusIcon, greenBusIcon, redBusIcon, yellowBusIcon } from "./buss";
@@ -11,6 +10,7 @@ import { grayForkliftIcon, greenForkliftIcon, redForkliftIcon, yellowForkliftIco
 import { grayMotorcycleIcon, greenMotorcycleIcon, redMotorcycleIcon, yellowMotorcycleIcon } from "./motorcycles";
 import { Car, LastLocationCar } from "akeyless-types-commons";
 import { VehicleSvg } from "../../types";
+import { calculateBearing } from "../../helpers";
 export const allIcons = {
     car: {
         red: redCarIcon,
