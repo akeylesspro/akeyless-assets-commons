@@ -10,7 +10,7 @@
     "author": "",
     "license": "ISC",
     "description": "",
-    "peerDependencies": {
+    "dependencies": {
         "akeyless-client-commons": "github:akeylesspro/akeyless-client-commons",
         "akeyless-types-commons": "github:akeylesspro/akeyless-types-commons",
         "react": "^18.3.1",
