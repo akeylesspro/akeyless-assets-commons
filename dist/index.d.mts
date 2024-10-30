@@ -113,7 +113,8 @@ declare const akeylessLogoSvg: react_jsx_runtime.JSX.Element;
 declare const menuSvg: react_jsx_runtime.JSX.Element;
 declare const endPointSvg: react_jsx_runtime.JSX.Element;
 declare const startPointSvg: react_jsx_runtime.JSX.Element;
-declare const carPlantDiv: (car_number: any, filter: string, style: any) => react_jsx_runtime.JSX.Element;
+type CarPlantDiv = (car_number: string, filter?: string, style?: React.CSSProperties) => JSX.Element;
+declare const carPlantDiv: CarPlantDiv;
 
 declare const bellIco: react_jsx_runtime.JSX.Element;
 declare const low_fuel_levelSvg: react_jsx_runtime.JSX.Element;

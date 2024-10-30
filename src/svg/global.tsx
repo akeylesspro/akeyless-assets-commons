@@ -867,8 +867,8 @@ export const startPointSvg = (
         />
     </svg>
 );
-
-export const carPlantDiv = (car_number, filter = "saturate(100%)", style) => {
+type CarPlantDiv = (car_number: string, filter?: string, style?: React.CSSProperties) => JSX.Element;
+export const carPlantDiv:CarPlantDiv = (car_number, filter = "saturate(100%)", style) => {
     return (
         <div className={`car_plate `}>
             <img style={{ ...style, filter: filter }} src="/images/car_plate.png" alt="plate" />
