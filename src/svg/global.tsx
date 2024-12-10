@@ -396,7 +396,7 @@ export const circlePolygonSvg = (
         />
     </svg>
 );
-export const circlePolygonSvgFun = (color) => {
+export const circlePolygonSvgFun = (color: string) => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 22" fill="none">
             <path
@@ -410,7 +410,7 @@ export const circlePolygonSvgFun = (color) => {
         </svg>
     );
 };
-export const freeShapePolygonSvgFun = (color) => {
+export const freeShapePolygonSvgFun = (color: string) => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 25 19" fill="none">
             <path
@@ -511,7 +511,7 @@ export const usFlagSvg = (
         </g>
     </svg>
 );
-export const israelFlagSvgFun = (w, h) => {
+export const israelFlagSvgFun = (w?: number, h?: number) => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width={String(w) || "32"} height={String(h) || "22"} viewBox="0 0 32 22" fill="none">
             <g clipPath="url(#clip0_3_5825)">
@@ -526,7 +526,7 @@ export const israelFlagSvgFun = (w, h) => {
         </svg>
     );
 };
-export const usFlagSvgFun = (w, h) => {
+export const usFlagSvgFun = (w?: number, h?: number) => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width={String(w) || "32"} height={String(h) || "22"} viewBox="0 0 32 22" fill="none">
             <g clipPath="url(#clip0_2_5800)">
@@ -868,7 +868,7 @@ export const startPointSvg = (
     </svg>
 );
 type CarPlantDiv = (car_number: string, filter?: string, style?: React.CSSProperties) => JSX.Element;
-export const carPlantDiv:CarPlantDiv = (car_number, filter = "saturate(100%)", style) => {
+export const carPlantDiv: CarPlantDiv = (car_number, filter = "saturate(100%)", style) => {
     return (
         <div className={`car_plate `}>
             <img style={{ ...style, filter: filter }} src="/images/car_plate.png" alt="plate" />
