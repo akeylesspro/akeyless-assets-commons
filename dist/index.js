@@ -24821,8 +24821,8 @@ var usFlagSvg = /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("svg", {
 var israelFlagSvgFun = function(w, h) {
     return /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("svg", {
         xmlns: "http://www.w3.org/2000/svg",
-        width: String(w) || "32",
-        height: String(h) || "22",
+        width: String(w || "32"),
+        height: String(h || "22"),
         viewBox: "0 0 32 22",
         fill: "none",
         children: /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("g", {
@@ -24851,8 +24851,8 @@ var israelFlagSvgFun = function(w, h) {
 var usFlagSvgFun = function(w, h) {
     return /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("svg", {
         xmlns: "http://www.w3.org/2000/svg",
-        width: String(w) || "32",
-        height: String(h) || "22",
+        width: String(w || "32"),
+        height: String(h || "22"),
         viewBox: "0 0 32 22",
         fill: "none",
         children: /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("g", {

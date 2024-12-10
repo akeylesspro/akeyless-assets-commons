@@ -396,7 +396,7 @@ export const circlePolygonSvg = (
         />
     </svg>
 );
-export const circlePolygonSvgFun = (color: string) => {
+export const circlePolygonSvgFun = (color?: string) => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 22" fill="none">
             <path
@@ -410,7 +410,7 @@ export const circlePolygonSvgFun = (color: string) => {
         </svg>
     );
 };
-export const freeShapePolygonSvgFun = (color: string) => {
+export const freeShapePolygonSvgFun = (color?: string) => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 25 19" fill="none">
             <path
@@ -513,7 +513,7 @@ export const usFlagSvg = (
 );
 export const israelFlagSvgFun = (w?: number, h?: number) => {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width={String(w) || "32"} height={String(h) || "22"} viewBox="0 0 32 22" fill="none">
+        <svg xmlns="http://www.w3.org/2000/svg" width={String(w || "32")} height={String(h || "22")} viewBox="0 0 32 22" fill="none">
             <g clipPath="url(#clip0_3_5825)">
                 <path d="M32 0H0V22H32V0Z" fill="#F0F0F0" />
                 <path
@@ -528,7 +528,7 @@ export const israelFlagSvgFun = (w?: number, h?: number) => {
 };
 export const usFlagSvgFun = (w?: number, h?: number) => {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width={String(w) || "32"} height={String(h) || "22"} viewBox="0 0 32 22" fill="none">
+        <svg xmlns="http://www.w3.org/2000/svg" width={String(w || "32")} height={String(h || "22")} viewBox="0 0 32 22" fill="none">
             <g clipPath="url(#clip0_2_5800)">
                 <path d="M32 0H0V22H32V0Z" fill="#F0F0F0" />
                 <path d="M18.0053 0H14.0053V8.93784H0V13.0622H14.0053V22H18.0053V13.0622H32V8.93784H18.0053V0Z" fill="#D80027" />
