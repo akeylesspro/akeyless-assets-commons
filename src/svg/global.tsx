@@ -875,7 +875,7 @@ interface CarPlanOptions {
 }
 
 type LocalCarPlate = (car_number: string, options?: CarPlanOptions) => JSX.Element;
-type CarPlateDiv = (car_number: string, country?: CountryOptions, options?: CarPlanOptions) => JSX.Element;
+type CarPlateDiv = (car_number: string, country: CountryOptions, options?: CarPlanOptions) => JSX.Element;
 const initOptions = {
     style: {},
     className: "",

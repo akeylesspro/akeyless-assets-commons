@@ -119,7 +119,7 @@ interface CarPlanOptions {
     filter?: string;
 }
 type LocalCarPlate = (car_number: string, options?: CarPlanOptions) => JSX.Element;
-type CarPlateDiv = (car_number: string, country?: CountryOptions, options?: CarPlanOptions) => JSX.Element;
+type CarPlateDiv = (car_number: string, country: CountryOptions, options?: CarPlanOptions) => JSX.Element;
 declare const carPlateDiv: CarPlateDiv;
 declare const ilCarPlate: LocalCarPlate;
 declare const usPlate: LocalCarPlate;
