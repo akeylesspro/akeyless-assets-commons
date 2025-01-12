@@ -23834,6 +23834,7 @@ var generateVehicleIconForMenu = function(width, height, vehicle, locationCar) {
     });
 };
 // src/svg/global.tsx
+import { CountryOptions } from "akeyless-types-commons";
 import { jsx as jsx12, jsxs as jsxs12 } from "react/jsx-runtime";
 var carMarkerSvg = /* @__PURE__ */ jsx12("svg", {
     xmlns: "http://www.w3.org/2000/svg",
@@ -25073,15 +25074,24 @@ var startPointSvg = /* @__PURE__ */ jsx12("svg", {
         strokeWidth: "3"
     })
 });
-var carPlantDiv = function(car_number) {
-    var filter = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : "saturate(100%)", style = arguments.length > 2 ? arguments[2] : void 0;
+var initOptions = {
+    style: {},
+    className: "",
+    filter: "saturate(100%)"
+};
+var carPlateDiv = function(car_number, country) {
+    var options = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : initOptions;
+    return country === CountryOptions.IL ? ilCarPlate(car_number, options) : usPlate(car_number, options);
+};
+var ilCarPlate = function(car_number, param) {
+    var style = param.style, className = param.className, filter = param.filter;
     return /* @__PURE__ */ jsxs12("div", {
-        className: "car_plate ",
+        className: "car_plate ".concat(className || "", " "),
         children: [
             /* @__PURE__ */ jsx12("img", {
-                style: _object_spread_props(_object_spread({}, style), {
+                style: {
                     filter: filter
-                }),
+                },
                 src: "/images/car_plate.png",
                 alt: "plate"
             }),
@@ -25099,6 +25109,25 @@ var carPlantDiv = function(car_number) {
                 ]
             })
         ]
+    });
+};
+var usPlate = function(car_number, param) {
+    var style = param.style, className = param.className, filter = param.filter;
+    return /* @__PURE__ */ jsx12("div", {
+        className: "car_plate ".concat(className || "", " "),
+        children: /* @__PURE__ */ jsxs12("div", {
+            style: _object_spread_props(_object_spread({}, style), {
+                filter: filter
+            }),
+            className: "bg-[#b9bebe] center",
+            children: [
+                /* @__PURE__ */ jsx12("span", {
+                    className: "text-[#102246]",
+                    children: formatCarNumber(car_number)
+                }),
+                " "
+            ]
+        })
     });
 };
 // src/svg/warningIcons.tsx
@@ -25400,4 +25429,4 @@ var site_low_battery_level_svg = /* @__PURE__ */ jsx13("svg", {
 var site_charging_icon = /* @__PURE__ */ jsx13("i", {
     className: "fa-regular text-[#37a744] fa-bolt"
 });
-export { absSvg, addPolygonSvg, air_bagSvg, akeylessLogoSvg, alertSvg, allIcons, asteriskSvg, batterySvg, bellIco, cameraSvg, carCardSvg, carCutSvg, carMarkerSvg, carPlantDiv, carSvg, carSvg2, changeCoseSvg, charging_icon, check_engineSvg, circleDefaultPolygonSvg, circlePolygonSvg, circlePolygonSvgFun, cutOnSvg, deleteSvg, editPenSvg, editSvg, endPointSvg, freeShapeDefaultPolygonSvg, freeShapePolygonSvg, freeShapePolygonSvgFun, fullScrenSvg, garbageSvg, garegeModSvg, generateVehicleIconForMenu, getVehiclesIcon, glassSvg, greenVSvg, impersonatImg, infoSvg, infoSvg2, israelFlagSvg, israelFlagSvgFun, low_airSvg, low_battery_level_svg, low_fuel_levelSvg, mapSvg, menuSvg, moveSvg, openDorsSvg, passwordSvg, phoneSvg, polygonSvg, redXSvg, searchSvg, shrinkScrenSvg, site_absSvg, site_air_bagSvg, site_batterySvg, site_charging_icon, site_check_engineSvg, site_low_airSvg, site_low_battery_level_svg, site_low_fuel_levelSvg, startPointSvg, trashSvg, tripsSvg, usFlagSvg, usFlagSvgFun, userSvg, vibretionSvg, videoHistorySvg, xSvg };
+export { absSvg, addPolygonSvg, air_bagSvg, akeylessLogoSvg, alertSvg, allIcons, asteriskSvg, batterySvg, bellIco, cameraSvg, carCardSvg, carCutSvg, carMarkerSvg, carPlateDiv, carSvg, carSvg2, changeCoseSvg, charging_icon, check_engineSvg, circleDefaultPolygonSvg, circlePolygonSvg, circlePolygonSvgFun, cutOnSvg, deleteSvg, editPenSvg, editSvg, endPointSvg, freeShapeDefaultPolygonSvg, freeShapePolygonSvg, freeShapePolygonSvgFun, fullScrenSvg, garbageSvg, garegeModSvg, generateVehicleIconForMenu, getVehiclesIcon, glassSvg, greenVSvg, ilCarPlate, impersonatImg, infoSvg, infoSvg2, israelFlagSvg, israelFlagSvgFun, low_airSvg, low_battery_level_svg, low_fuel_levelSvg, mapSvg, menuSvg, moveSvg, openDorsSvg, passwordSvg, phoneSvg, polygonSvg, redXSvg, searchSvg, shrinkScrenSvg, site_absSvg, site_air_bagSvg, site_batterySvg, site_charging_icon, site_check_engineSvg, site_low_airSvg, site_low_battery_level_svg, site_low_fuel_levelSvg, startPointSvg, trashSvg, tripsSvg, usFlagSvg, usFlagSvgFun, usPlate, userSvg, vibretionSvg, videoHistorySvg, xSvg };

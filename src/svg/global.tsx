@@ -1,3 +1,4 @@
+import { CountryOptions } from "akeyless-types-commons";
 import { formatCarNumber } from "../helpers";
 
 export const carMarkerSvg = (
@@ -867,13 +868,38 @@ export const startPointSvg = (
         />
     </svg>
 );
-type CarPlantDiv = (car_number: string, filter?: string, style?: React.CSSProperties) => JSX.Element;
-export const carPlantDiv: CarPlantDiv = (car_number, filter = "saturate(100%)", style) => {
+interface CarPlanOptions {
+    style?: React.CSSProperties;
+    className?: string;
+    filter?: string;
+}
+
+type LocalCarPlate = (car_number: string, options?: CarPlanOptions) => JSX.Element;
+type CarPlateDiv = (car_number: string, country?: CountryOptions, options?: CarPlanOptions) => JSX.Element;
+const initOptions = {
+    style: {},
+    className: "",
+    filter: "saturate(100%)",
+};
+export const carPlateDiv: CarPlateDiv = (car_number, country, options = initOptions) => {
+    return country === CountryOptions.IL ? ilCarPlate(car_number, options) : usPlate(car_number, options);
+};
+export const ilCarPlate: LocalCarPlate = (car_number, { style, className, filter }) => {
     return (
-        <div className={`car_plate `}>
-            <img style={{ ...style, filter: filter }} src="/images/car_plate.png" alt="plate" />
+        <div className={`car_plate ${className || ""} `}>
+            <img style={{ filter: filter }} src="/images/car_plate.png" alt="plate" />
             <div style={{ ...style, filter: filter }} className="center">
                 <span className="ellipsis">{formatCarNumber(car_number)}</span>{" "}
+            </div>
+        </div>
+    );
+};
+
+export const usPlate: LocalCarPlate = (car_number, { style, className, filter }) => {
+    return (
+        <div className={`car_plate ${className || ""} `}>
+            <div style={{ ...style, filter: filter }} className="bg-[#b9bebe] center">
+                <span className="text-[#102246]">{formatCarNumber(car_number)}</span>{" "}
             </div>
         </div>
     );

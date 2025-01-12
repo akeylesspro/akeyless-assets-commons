@@ -4,14 +4,13 @@
     "scripts": {
         "build": "tsup src/index.tsx --format esm,cjs --dts",
         "deploy": "npm run build && git add . && git commit -am 'build' && git push origin main",
-        "uc": "npm i https://github.com/akeylesspro/akeyless-client-commons.git && npm i git+https://github.com/akeylesspro/akeyless-types-commons.git"
+        "uc": "npm i git+https://github.com/akeylesspro/akeyless-types-commons.git"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "description": "",
     "dependencies": {
-        "akeyless-client-commons": "github:akeylesspro/akeyless-client-commons",
         "akeyless-types-commons": "github:akeylesspro/akeyless-types-commons",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",

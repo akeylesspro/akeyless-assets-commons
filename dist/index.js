@@ -143,8 +143,8 @@ __export(src_exports, {
     carMarkerSvg: function() {
         return carMarkerSvg;
     },
-    carPlantDiv: function() {
-        return carPlantDiv;
+    carPlateDiv: function() {
+        return carPlateDiv;
     },
     carSvg: function() {
         return carSvg;
@@ -214,6 +214,9 @@ __export(src_exports, {
     },
     greenVSvg: function() {
         return greenVSvg;
+    },
+    ilCarPlate: function() {
+        return ilCarPlate;
     },
     impersonatImg: function() {
         return impersonatImg;
@@ -307,6 +310,9 @@ __export(src_exports, {
     },
     usFlagSvgFun: function() {
         return usFlagSvgFun;
+    },
+    usPlate: function() {
+        return usPlate;
     },
     userSvg: function() {
         return userSvg;
@@ -24106,6 +24112,7 @@ var generateVehicleIconForMenu = function(width, height, vehicle, locationCar) {
     });
 };
 // src/svg/global.tsx
+var import_akeyless_types_commons = require("akeyless-types-commons");
 var import_jsx_runtime12 = require("react/jsx-runtime");
 var carMarkerSvg = /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
@@ -25345,15 +25352,24 @@ var startPointSvg = /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("svg", {
         strokeWidth: "3"
     })
 });
-var carPlantDiv = function(car_number) {
-    var filter = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : "saturate(100%)", style = arguments.length > 2 ? arguments[2] : void 0;
+var initOptions = {
+    style: {},
+    className: "",
+    filter: "saturate(100%)"
+};
+var carPlateDiv = function(car_number, country) {
+    var options = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : initOptions;
+    return country === import_akeyless_types_commons.CountryOptions.IL ? ilCarPlate(car_number, options) : usPlate(car_number, options);
+};
+var ilCarPlate = function(car_number, param) {
+    var style = param.style, className = param.className, filter = param.filter;
     return /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", {
-        className: "car_plate ",
+        className: "car_plate ".concat(className || "", " "),
         children: [
             /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("img", {
-                style: _object_spread_props(_object_spread({}, style), {
+                style: {
                     filter: filter
-                }),
+                },
                 src: "/images/car_plate.png",
                 alt: "plate"
             }),
@@ -25371,6 +25387,25 @@ var carPlantDiv = function(car_number) {
                 ]
             })
         ]
+    });
+};
+var usPlate = function(car_number, param) {
+    var style = param.style, className = param.className, filter = param.filter;
+    return /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("div", {
+        className: "car_plate ".concat(className || "", " "),
+        children: /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", {
+            style: _object_spread_props(_object_spread({}, style), {
+                filter: filter
+            }),
+            className: "bg-[#b9bebe] center",
+            children: [
+                /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("span", {
+                    className: "text-[#102246]",
+                    children: formatCarNumber(car_number)
+                }),
+                " "
+            ]
+        })
     });
 };
 // src/svg/warningIcons.tsx
@@ -25687,7 +25722,7 @@ var site_charging_icon = /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("i", {
     carCardSvg: carCardSvg,
     carCutSvg: carCutSvg,
     carMarkerSvg: carMarkerSvg,
-    carPlantDiv: carPlantDiv,
+    carPlateDiv: carPlateDiv,
     carSvg: carSvg,
     carSvg2: carSvg2,
     changeCoseSvg: changeCoseSvg,
@@ -25711,6 +25746,7 @@ var site_charging_icon = /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("i", {
     getVehiclesIcon: getVehiclesIcon,
     glassSvg: glassSvg,
     greenVSvg: greenVSvg,
+    ilCarPlate: ilCarPlate,
     impersonatImg: impersonatImg,
     infoSvg: infoSvg,
     infoSvg2: infoSvg2,
@@ -25742,6 +25778,7 @@ var site_charging_icon = /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("i", {
     tripsSvg: tripsSvg,
     usFlagSvg: usFlagSvg,
     usFlagSvgFun: usFlagSvgFun,
+    usPlate: usPlate,
     userSvg: userSvg,
     vibretionSvg: vibretionSvg,
     videoHistorySvg: videoHistorySvg,
