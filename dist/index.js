@@ -25358,17 +25358,17 @@ var initOptions = {
     filter: "saturate(100%)"
 };
 var CarPlate = function(param) {
-    var car_number = param.car_number, country = param.country, _param_options = param.options, options = _param_options === void 0 ? initOptions : _param_options;
+    var carNumber = param.carNumber, country = param.country, _param_options = param.options, options = _param_options === void 0 ? initOptions : _param_options;
     return country === import_akeyless_types_commons.CountryOptions.IL ? /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(IlPlate, {
-        car_number: car_number,
+        carNumber: carNumber,
         options: options
     }) : /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(UsPlate, {
-        car_number: car_number,
+        carNumber: carNumber,
         options: options
     });
 };
 var IlPlate = function(param) {
-    var car_number = param.car_number, options = param.options;
+    var carNumber = param.carNumber, options = param.options;
     return /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", {
         className: "car_plate ".concat(options.className || "", " "),
         children: [
@@ -25387,7 +25387,7 @@ var IlPlate = function(param) {
                 children: [
                     /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("span", {
                         className: "ellipsis",
-                        children: formatCarNumber(car_number)
+                        children: formatCarNumber(carNumber)
                     }),
                     " "
                 ]
@@ -25396,7 +25396,7 @@ var IlPlate = function(param) {
     });
 };
 var UsPlate = function(param) {
-    var car_number = param.car_number, options = param.options;
+    var carNumber = param.carNumber, options = param.options;
     return /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("div", {
         className: "car_plate ".concat(options.className || "", " "),
         children: /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", {
@@ -25407,7 +25407,7 @@ var UsPlate = function(param) {
             children: [
                 /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("span", {
                     className: "text-[#102246]",
-                    children: formatCarNumber(car_number)
+                    children: formatCarNumber(carNumber)
                 }),
                 " "
             ]

@@ -875,7 +875,7 @@ interface CarPlanOptions {
 }
 
 interface LocalCarPlateProps {
-    car_number: string;
+    carNumber: string;
     options?: CarPlanOptions;
 }
 interface CarPlateProps extends LocalCarPlateProps {
@@ -887,29 +887,29 @@ const initOptions = {
     className: "",
     filter: "saturate(100%)",
 };
-export const CarPlate = ({ car_number, country, options = initOptions }: CarPlateProps) => {
+export const CarPlate = ({ carNumber, country, options = initOptions }: CarPlateProps) => {
     return country === CountryOptions.IL ? (
-        <IlPlate car_number={car_number} options={options} />
+        <IlPlate carNumber={carNumber} options={options} />
     ) : (
-        <UsPlate car_number={car_number} options={options} />
+        <UsPlate carNumber={carNumber} options={options} />
     );
 };
-export const IlPlate = ({ car_number, options }: LocalCarPlateProps) => {
+export const IlPlate = ({ carNumber, options }: LocalCarPlateProps) => {
     return (
         <div className={`car_plate ${options.className || ""} `}>
             <img style={{ filter: options.filter }} src="/images/car_plate.png" alt="plate" />
             <div style={{ ...options.style, filter: options.filter }} className="center">
-                <span className="ellipsis">{formatCarNumber(car_number)}</span>{" "}
+                <span className="ellipsis">{formatCarNumber(carNumber)}</span>{" "}
             </div>
         </div>
     );
 };
 
-export const UsPlate = ({ car_number, options }: LocalCarPlateProps) => {
+export const UsPlate = ({ carNumber, options }: LocalCarPlateProps) => {
     return (
         <div className={`car_plate ${options.className || ""} `}>
             <div style={{ ...options.style, filter: options.filter }} className="bg-[#b9bebe] center">
-                <span className="text-[#102246]">{formatCarNumber(car_number)}</span>{" "}
+                <span className="text-[#102246]">{formatCarNumber(carNumber)}</span>{" "}
             </div>
         </div>
     );

@@ -119,15 +119,15 @@ interface CarPlanOptions {
     filter?: string;
 }
 interface LocalCarPlateProps {
-    car_number: string;
+    carNumber: string;
     options?: CarPlanOptions;
 }
 interface CarPlateProps extends LocalCarPlateProps {
     country: CountryOptions;
 }
-declare const CarPlate: ({ car_number, country, options }: CarPlateProps) => react_jsx_runtime.JSX.Element;
-declare const IlPlate: ({ car_number, options }: LocalCarPlateProps) => react_jsx_runtime.JSX.Element;
-declare const UsPlate: ({ car_number, options }: LocalCarPlateProps) => react_jsx_runtime.JSX.Element;
+declare const CarPlate: ({ carNumber, country, options }: CarPlateProps) => react_jsx_runtime.JSX.Element;
+declare const IlPlate: ({ carNumber, options }: LocalCarPlateProps) => react_jsx_runtime.JSX.Element;
+declare const UsPlate: ({ carNumber, options }: LocalCarPlateProps) => react_jsx_runtime.JSX.Element;
 
 declare const bellIco: react_jsx_runtime.JSX.Element;
 declare const low_fuel_levelSvg: react_jsx_runtime.JSX.Element;

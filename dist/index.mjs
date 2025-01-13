@@ -25080,17 +25080,17 @@ var initOptions = {
     filter: "saturate(100%)"
 };
 var CarPlate = function(param) {
-    var car_number = param.car_number, country = param.country, _param_options = param.options, options = _param_options === void 0 ? initOptions : _param_options;
+    var carNumber = param.carNumber, country = param.country, _param_options = param.options, options = _param_options === void 0 ? initOptions : _param_options;
     return country === CountryOptions.IL ? /* @__PURE__ */ jsx12(IlPlate, {
-        car_number: car_number,
+        carNumber: carNumber,
         options: options
     }) : /* @__PURE__ */ jsx12(UsPlate, {
-        car_number: car_number,
+        carNumber: carNumber,
         options: options
     });
 };
 var IlPlate = function(param) {
-    var car_number = param.car_number, options = param.options;
+    var carNumber = param.carNumber, options = param.options;
     return /* @__PURE__ */ jsxs12("div", {
         className: "car_plate ".concat(options.className || "", " "),
         children: [
@@ -25109,7 +25109,7 @@ var IlPlate = function(param) {
                 children: [
                     /* @__PURE__ */ jsx12("span", {
                         className: "ellipsis",
-                        children: formatCarNumber(car_number)
+                        children: formatCarNumber(carNumber)
                     }),
                     " "
                 ]
@@ -25118,7 +25118,7 @@ var IlPlate = function(param) {
     });
 };
 var UsPlate = function(param) {
-    var car_number = param.car_number, options = param.options;
+    var carNumber = param.carNumber, options = param.options;
     return /* @__PURE__ */ jsx12("div", {
         className: "car_plate ".concat(options.className || "", " "),
         children: /* @__PURE__ */ jsxs12("div", {
@@ -25129,7 +25129,7 @@ var UsPlate = function(param) {
             children: [
                 /* @__PURE__ */ jsx12("span", {
                     className: "text-[#102246]",
-                    children: formatCarNumber(car_number)
+                    children: formatCarNumber(carNumber)
                 }),
                 " "
             ]
