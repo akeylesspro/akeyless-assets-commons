@@ -874,12 +874,11 @@ interface CarPlanOptions {
     filter?: string;
 }
 
-type LocalCarPlate = (car_number: string, options?: CarPlanOptions) => JSX.Element;
 interface LocalCarPlateProps {
     car_number: string;
     options?: CarPlanOptions;
 }
-interface CarPlateDivProps extends LocalCarPlateProps {
+interface CarPlateProps extends LocalCarPlateProps {
     country: CountryOptions;
 }
 
@@ -888,7 +887,7 @@ const initOptions = {
     className: "",
     filter: "saturate(100%)",
 };
-export const CarPlateDiv = ({ car_number, country, options = initOptions }: CarPlateDivProps) => {
+export const CarPlate = ({ car_number, country, options = initOptions }: CarPlateProps) => {
     return country === CountryOptions.IL ? (
         <IlPlate car_number={car_number} options={options} />
     ) : (

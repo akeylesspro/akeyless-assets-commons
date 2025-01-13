@@ -104,8 +104,8 @@ var __toCommonJS = function(mod) {
 // src/index.tsx
 var src_exports = {};
 __export(src_exports, {
-    CarPlateDiv: function() {
-        return CarPlateDiv;
+    CarPlate: function() {
+        return CarPlate;
     },
     IlPlate: function() {
         return IlPlate;
@@ -25357,7 +25357,7 @@ var initOptions = {
     className: "",
     filter: "saturate(100%)"
 };
-var CarPlateDiv = function(param) {
+var CarPlate = function(param) {
     var car_number = param.car_number, country = param.country, _param_options = param.options, options = _param_options === void 0 ? initOptions : _param_options;
     return country === import_akeyless_types_commons.CountryOptions.IL ? /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(IlPlate, {
         car_number: car_number,
@@ -25715,7 +25715,7 @@ var site_charging_icon = /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("i", {
 });
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
-    CarPlateDiv: CarPlateDiv,
+    CarPlate: CarPlate,
     IlPlate: IlPlate,
     UsPlate: UsPlate,
     absSvg: absSvg,

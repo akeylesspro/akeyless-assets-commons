@@ -25079,7 +25079,7 @@ var initOptions = {
     className: "",
     filter: "saturate(100%)"
 };
-var CarPlateDiv = function(param) {
+var CarPlate = function(param) {
     var car_number = param.car_number, country = param.country, _param_options = param.options, options = _param_options === void 0 ? initOptions : _param_options;
     return country === CountryOptions.IL ? /* @__PURE__ */ jsx12(IlPlate, {
         car_number: car_number,
@@ -25435,4 +25435,4 @@ var site_low_battery_level_svg = /* @__PURE__ */ jsx13("svg", {
 var site_charging_icon = /* @__PURE__ */ jsx13("i", {
     className: "fa-regular text-[#37a744] fa-bolt"
 });
-export { CarPlateDiv, IlPlate, UsPlate, absSvg, addPolygonSvg, air_bagSvg, akeylessLogoSvg, alertSvg, allIcons, asteriskSvg, batterySvg, bellIco, cameraSvg, carCardSvg, carCutSvg, carMarkerSvg, carSvg, carSvg2, changeCoseSvg, charging_icon, check_engineSvg, circleDefaultPolygonSvg, circlePolygonSvg, circlePolygonSvgFun, cutOnSvg, deleteSvg, editPenSvg, editSvg, endPointSvg, freeShapeDefaultPolygonSvg, freeShapePolygonSvg, freeShapePolygonSvgFun, fullScrenSvg, garbageSvg, garegeModSvg, generateVehicleIconForMenu, getVehiclesIcon, glassSvg, greenVSvg, impersonatImg, infoSvg, infoSvg2, israelFlagSvg, israelFlagSvgFun, low_airSvg, low_battery_level_svg, low_fuel_levelSvg, mapSvg, menuSvg, moveSvg, openDorsSvg, passwordSvg, phoneSvg, polygonSvg, redXSvg, searchSvg, shrinkScrenSvg, site_absSvg, site_air_bagSvg, site_batterySvg, site_charging_icon, site_check_engineSvg, site_low_airSvg, site_low_battery_level_svg, site_low_fuel_levelSvg, startPointSvg, trashSvg, tripsSvg, usFlagSvg, usFlagSvgFun, userSvg, vibretionSvg, videoHistorySvg, xSvg };
+export { CarPlate, IlPlate, UsPlate, absSvg, addPolygonSvg, air_bagSvg, akeylessLogoSvg, alertSvg, allIcons, asteriskSvg, batterySvg, bellIco, cameraSvg, carCardSvg, carCutSvg, carMarkerSvg, carSvg, carSvg2, changeCoseSvg, charging_icon, check_engineSvg, circleDefaultPolygonSvg, circlePolygonSvg, circlePolygonSvgFun, cutOnSvg, deleteSvg, editPenSvg, editSvg, endPointSvg, freeShapeDefaultPolygonSvg, freeShapePolygonSvg, freeShapePolygonSvgFun, fullScrenSvg, garbageSvg, garegeModSvg, generateVehicleIconForMenu, getVehiclesIcon, glassSvg, greenVSvg, impersonatImg, infoSvg, infoSvg2, israelFlagSvg, israelFlagSvgFun, low_airSvg, low_battery_level_svg, low_fuel_levelSvg, mapSvg, menuSvg, moveSvg, openDorsSvg, passwordSvg, phoneSvg, polygonSvg, redXSvg, searchSvg, shrinkScrenSvg, site_absSvg, site_air_bagSvg, site_batterySvg, site_charging_icon, site_check_engineSvg, site_low_airSvg, site_low_battery_level_svg, site_low_fuel_levelSvg, startPointSvg, trashSvg, tripsSvg, usFlagSvg, usFlagSvgFun, userSvg, vibretionSvg, videoHistorySvg, xSvg };

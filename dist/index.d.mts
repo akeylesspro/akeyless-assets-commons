@@ -122,10 +122,10 @@ interface LocalCarPlateProps {
     car_number: string;
     options?: CarPlanOptions;
 }
-interface CarPlateDivProps extends LocalCarPlateProps {
+interface CarPlateProps extends LocalCarPlateProps {
     country: CountryOptions;
 }
-declare const CarPlateDiv: ({ car_number, country, options }: CarPlateDivProps) => react_jsx_runtime.JSX.Element;
+declare const CarPlate: ({ car_number, country, options }: CarPlateProps) => react_jsx_runtime.JSX.Element;
 declare const IlPlate: ({ car_number, options }: LocalCarPlateProps) => react_jsx_runtime.JSX.Element;
 declare const UsPlate: ({ car_number, options }: LocalCarPlateProps) => react_jsx_runtime.JSX.Element;
 
@@ -147,4 +147,4 @@ declare const site_check_engineSvg: react_jsx_runtime.JSX.Element;
 declare const site_low_battery_level_svg: react_jsx_runtime.JSX.Element;
 declare const site_charging_icon: react_jsx_runtime.JSX.Element;
 
-export { CarPlateDiv, IlPlate, UsPlate, absSvg, addPolygonSvg, air_bagSvg, akeylessLogoSvg, alertSvg, allIcons, asteriskSvg, batterySvg, bellIco, cameraSvg, carCardSvg, carCutSvg, carMarkerSvg, carSvg, carSvg2, changeCoseSvg, charging_icon, check_engineSvg, circleDefaultPolygonSvg, circlePolygonSvg, circlePolygonSvgFun, cutOnSvg, deleteSvg, editPenSvg, editSvg, endPointSvg, freeShapeDefaultPolygonSvg, freeShapePolygonSvg, freeShapePolygonSvgFun, fullScrenSvg, garbageSvg, garegeModSvg, generateVehicleIconForMenu, getVehiclesIcon, glassSvg, greenVSvg, impersonatImg, infoSvg, infoSvg2, israelFlagSvg, israelFlagSvgFun, low_airSvg, low_battery_level_svg, low_fuel_levelSvg, mapSvg, menuSvg, moveSvg, openDorsSvg, passwordSvg, phoneSvg, polygonSvg, redXSvg, searchSvg, shrinkScrenSvg, site_absSvg, site_air_bagSvg, site_batterySvg, site_charging_icon, site_check_engineSvg, site_low_airSvg, site_low_battery_level_svg, site_low_fuel_levelSvg, startPointSvg, trashSvg, tripsSvg, usFlagSvg, usFlagSvgFun, userSvg, vibretionSvg, videoHistorySvg, xSvg };
+export { CarPlate, IlPlate, UsPlate, absSvg, addPolygonSvg, air_bagSvg, akeylessLogoSvg, alertSvg, allIcons, asteriskSvg, batterySvg, bellIco, cameraSvg, carCardSvg, carCutSvg, carMarkerSvg, carSvg, carSvg2, changeCoseSvg, charging_icon, check_engineSvg, circleDefaultPolygonSvg, circlePolygonSvg, circlePolygonSvgFun, cutOnSvg, deleteSvg, editPenSvg, editSvg, endPointSvg, freeShapeDefaultPolygonSvg, freeShapePolygonSvg, freeShapePolygonSvgFun, fullScrenSvg, garbageSvg, garegeModSvg, generateVehicleIconForMenu, getVehiclesIcon, glassSvg, greenVSvg, impersonatImg, infoSvg, infoSvg2, israelFlagSvg, israelFlagSvgFun, low_airSvg, low_battery_level_svg, low_fuel_levelSvg, mapSvg, menuSvg, moveSvg, openDorsSvg, passwordSvg, phoneSvg, polygonSvg, redXSvg, searchSvg, shrinkScrenSvg, site_absSvg, site_air_bagSvg, site_batterySvg, site_charging_icon, site_check_engineSvg, site_low_airSvg, site_low_battery_level_svg, site_low_fuel_levelSvg, startPointSvg, trashSvg, tripsSvg, usFlagSvg, usFlagSvgFun, userSvg, vibretionSvg, videoHistorySvg, xSvg };
