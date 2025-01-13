@@ -25079,25 +25079,31 @@ var initOptions = {
     className: "",
     filter: "saturate(100%)"
 };
-var carPlateDiv = function(car_number, country) {
-    var options = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : initOptions;
-    return country === CountryOptions.IL ? ilCarPlate(car_number, options) : usPlate(car_number, options);
+var CarPlateDiv = function(param) {
+    var car_number = param.car_number, country = param.country, _param_options = param.options, options = _param_options === void 0 ? initOptions : _param_options;
+    return country === CountryOptions.IL ? /* @__PURE__ */ jsx12(IlPlate, {
+        car_number: car_number,
+        options: options
+    }) : /* @__PURE__ */ jsx12(UsPlate, {
+        car_number: car_number,
+        options: options
+    });
 };
-var ilCarPlate = function(car_number, param) {
-    var style = param.style, className = param.className, filter = param.filter;
+var IlPlate = function(param) {
+    var car_number = param.car_number, options = param.options;
     return /* @__PURE__ */ jsxs12("div", {
-        className: "car_plate ".concat(className || "", " "),
+        className: "car_plate ".concat(options.className || "", " "),
         children: [
             /* @__PURE__ */ jsx12("img", {
                 style: {
-                    filter: filter
+                    filter: options.filter
                 },
                 src: "/images/car_plate.png",
                 alt: "plate"
             }),
             /* @__PURE__ */ jsxs12("div", {
-                style: _object_spread_props(_object_spread({}, style), {
-                    filter: filter
+                style: _object_spread_props(_object_spread({}, options.style), {
+                    filter: options.filter
                 }),
                 className: "center",
                 children: [
@@ -25111,13 +25117,13 @@ var ilCarPlate = function(car_number, param) {
         ]
     });
 };
-var usPlate = function(car_number, param) {
-    var style = param.style, className = param.className, filter = param.filter;
+var UsPlate = function(param) {
+    var car_number = param.car_number, options = param.options;
     return /* @__PURE__ */ jsx12("div", {
-        className: "car_plate ".concat(className || "", " "),
+        className: "car_plate ".concat(options.className || "", " "),
         children: /* @__PURE__ */ jsxs12("div", {
-            style: _object_spread_props(_object_spread({}, style), {
-                filter: filter
+            style: _object_spread_props(_object_spread({}, options.style), {
+                filter: options.filter
             }),
             className: "bg-[#b9bebe] center",
             children: [
@@ -25429,4 +25435,4 @@ var site_low_battery_level_svg = /* @__PURE__ */ jsx13("svg", {
 var site_charging_icon = /* @__PURE__ */ jsx13("i", {
     className: "fa-regular text-[#37a744] fa-bolt"
 });
-export { absSvg, addPolygonSvg, air_bagSvg, akeylessLogoSvg, alertSvg, allIcons, asteriskSvg, batterySvg, bellIco, cameraSvg, carCardSvg, carCutSvg, carMarkerSvg, carPlateDiv, carSvg, carSvg2, changeCoseSvg, charging_icon, check_engineSvg, circleDefaultPolygonSvg, circlePolygonSvg, circlePolygonSvgFun, cutOnSvg, deleteSvg, editPenSvg, editSvg, endPointSvg, freeShapeDefaultPolygonSvg, freeShapePolygonSvg, freeShapePolygonSvgFun, fullScrenSvg, garbageSvg, garegeModSvg, generateVehicleIconForMenu, getVehiclesIcon, glassSvg, greenVSvg, ilCarPlate, impersonatImg, infoSvg, infoSvg2, israelFlagSvg, israelFlagSvgFun, low_airSvg, low_battery_level_svg, low_fuel_levelSvg, mapSvg, menuSvg, moveSvg, openDorsSvg, passwordSvg, phoneSvg, polygonSvg, redXSvg, searchSvg, shrinkScrenSvg, site_absSvg, site_air_bagSvg, site_batterySvg, site_charging_icon, site_check_engineSvg, site_low_airSvg, site_low_battery_level_svg, site_low_fuel_levelSvg, startPointSvg, trashSvg, tripsSvg, usFlagSvg, usFlagSvgFun, usPlate, userSvg, vibretionSvg, videoHistorySvg, xSvg };
+export { CarPlateDiv, IlPlate, UsPlate, absSvg, addPolygonSvg, air_bagSvg, akeylessLogoSvg, alertSvg, allIcons, asteriskSvg, batterySvg, bellIco, cameraSvg, carCardSvg, carCutSvg, carMarkerSvg, carSvg, carSvg2, changeCoseSvg, charging_icon, check_engineSvg, circleDefaultPolygonSvg, circlePolygonSvg, circlePolygonSvgFun, cutOnSvg, deleteSvg, editPenSvg, editSvg, endPointSvg, freeShapeDefaultPolygonSvg, freeShapePolygonSvg, freeShapePolygonSvgFun, fullScrenSvg, garbageSvg, garegeModSvg, generateVehicleIconForMenu, getVehiclesIcon, glassSvg, greenVSvg, impersonatImg, infoSvg, infoSvg2, israelFlagSvg, israelFlagSvgFun, low_airSvg, low_battery_level_svg, low_fuel_levelSvg, mapSvg, menuSvg, moveSvg, openDorsSvg, passwordSvg, phoneSvg, polygonSvg, redXSvg, searchSvg, shrinkScrenSvg, site_absSvg, site_air_bagSvg, site_batterySvg, site_charging_icon, site_check_engineSvg, site_low_airSvg, site_low_battery_level_svg, site_low_fuel_levelSvg, startPointSvg, trashSvg, tripsSvg, usFlagSvg, usFlagSvgFun, userSvg, vibretionSvg, videoHistorySvg, xSvg };

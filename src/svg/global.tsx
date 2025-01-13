@@ -875,30 +875,41 @@ interface CarPlanOptions {
 }
 
 type LocalCarPlate = (car_number: string, options?: CarPlanOptions) => JSX.Element;
-type CarPlateDiv = (car_number: string, country: CountryOptions, options?: CarPlanOptions) => JSX.Element;
+interface LocalCarPlateProps {
+    car_number: string;
+    options?: CarPlanOptions;
+}
+interface CarPlateDivProps extends LocalCarPlateProps {
+    country: CountryOptions;
+}
+
 const initOptions = {
     style: {},
     className: "",
     filter: "saturate(100%)",
 };
-export const carPlateDiv: CarPlateDiv = (car_number, country, options = initOptions) => {
-    return country === CountryOptions.IL ? ilCarPlate(car_number, options) : usPlate(car_number, options);
+export const CarPlateDiv = ({ car_number, country, options = initOptions }: CarPlateDivProps) => {
+    return country === CountryOptions.IL ? (
+        <IlPlate car_number={car_number} options={options} />
+    ) : (
+        <UsPlate car_number={car_number} options={options} />
+    );
 };
-export const ilCarPlate: LocalCarPlate = (car_number, { style, className, filter }) => {
+export const IlPlate = ({ car_number, options }: LocalCarPlateProps) => {
     return (
-        <div className={`car_plate ${className || ""} `}>
-            <img style={{ filter: filter }} src="/images/car_plate.png" alt="plate" />
-            <div style={{ ...style, filter: filter }} className="center">
+        <div className={`car_plate ${options.className || ""} `}>
+            <img style={{ filter: options.filter }} src="/images/car_plate.png" alt="plate" />
+            <div style={{ ...options.style, filter: options.filter }} className="center">
                 <span className="ellipsis">{formatCarNumber(car_number)}</span>{" "}
             </div>
         </div>
     );
 };
 
-export const usPlate: LocalCarPlate = (car_number, { style, className, filter }) => {
+export const UsPlate = ({ car_number, options }: LocalCarPlateProps) => {
     return (
-        <div className={`car_plate ${className || ""} `}>
-            <div style={{ ...style, filter: filter }} className="bg-[#b9bebe] center">
+        <div className={`car_plate ${options.className || ""} `}>
+            <div style={{ ...options.style, filter: options.filter }} className="bg-[#b9bebe] center">
                 <span className="text-[#102246]">{formatCarNumber(car_number)}</span>{" "}
             </div>
         </div>

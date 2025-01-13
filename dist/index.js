@@ -104,6 +104,15 @@ var __toCommonJS = function(mod) {
 // src/index.tsx
 var src_exports = {};
 __export(src_exports, {
+    CarPlateDiv: function() {
+        return CarPlateDiv;
+    },
+    IlPlate: function() {
+        return IlPlate;
+    },
+    UsPlate: function() {
+        return UsPlate;
+    },
     absSvg: function() {
         return absSvg;
     },
@@ -142,9 +151,6 @@ __export(src_exports, {
     },
     carMarkerSvg: function() {
         return carMarkerSvg;
-    },
-    carPlateDiv: function() {
-        return carPlateDiv;
     },
     carSvg: function() {
         return carSvg;
@@ -214,9 +220,6 @@ __export(src_exports, {
     },
     greenVSvg: function() {
         return greenVSvg;
-    },
-    ilCarPlate: function() {
-        return ilCarPlate;
     },
     impersonatImg: function() {
         return impersonatImg;
@@ -310,9 +313,6 @@ __export(src_exports, {
     },
     usFlagSvgFun: function() {
         return usFlagSvgFun;
-    },
-    usPlate: function() {
-        return usPlate;
     },
     userSvg: function() {
         return userSvg;
@@ -25357,25 +25357,31 @@ var initOptions = {
     className: "",
     filter: "saturate(100%)"
 };
-var carPlateDiv = function(car_number, country) {
-    var options = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : initOptions;
-    return country === import_akeyless_types_commons.CountryOptions.IL ? ilCarPlate(car_number, options) : usPlate(car_number, options);
+var CarPlateDiv = function(param) {
+    var car_number = param.car_number, country = param.country, _param_options = param.options, options = _param_options === void 0 ? initOptions : _param_options;
+    return country === import_akeyless_types_commons.CountryOptions.IL ? /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(IlPlate, {
+        car_number: car_number,
+        options: options
+    }) : /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(UsPlate, {
+        car_number: car_number,
+        options: options
+    });
 };
-var ilCarPlate = function(car_number, param) {
-    var style = param.style, className = param.className, filter = param.filter;
+var IlPlate = function(param) {
+    var car_number = param.car_number, options = param.options;
     return /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", {
-        className: "car_plate ".concat(className || "", " "),
+        className: "car_plate ".concat(options.className || "", " "),
         children: [
             /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("img", {
                 style: {
-                    filter: filter
+                    filter: options.filter
                 },
                 src: "/images/car_plate.png",
                 alt: "plate"
             }),
             /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", {
-                style: _object_spread_props(_object_spread({}, style), {
-                    filter: filter
+                style: _object_spread_props(_object_spread({}, options.style), {
+                    filter: options.filter
                 }),
                 className: "center",
                 children: [
@@ -25389,13 +25395,13 @@ var ilCarPlate = function(car_number, param) {
         ]
     });
 };
-var usPlate = function(car_number, param) {
-    var style = param.style, className = param.className, filter = param.filter;
+var UsPlate = function(param) {
+    var car_number = param.car_number, options = param.options;
     return /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("div", {
-        className: "car_plate ".concat(className || "", " "),
+        className: "car_plate ".concat(options.className || "", " "),
         children: /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", {
-            style: _object_spread_props(_object_spread({}, style), {
-                filter: filter
+            style: _object_spread_props(_object_spread({}, options.style), {
+                filter: options.filter
             }),
             className: "bg-[#b9bebe] center",
             children: [
@@ -25709,6 +25715,9 @@ var site_charging_icon = /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("i", {
 });
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
+    CarPlateDiv: CarPlateDiv,
+    IlPlate: IlPlate,
+    UsPlate: UsPlate,
     absSvg: absSvg,
     addPolygonSvg: addPolygonSvg,
     air_bagSvg: air_bagSvg,
@@ -25722,7 +25731,6 @@ var site_charging_icon = /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("i", {
     carCardSvg: carCardSvg,
     carCutSvg: carCutSvg,
     carMarkerSvg: carMarkerSvg,
-    carPlateDiv: carPlateDiv,
     carSvg: carSvg,
     carSvg2: carSvg2,
     changeCoseSvg: changeCoseSvg,
@@ -25746,7 +25754,6 @@ var site_charging_icon = /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("i", {
     getVehiclesIcon: getVehiclesIcon,
     glassSvg: glassSvg,
     greenVSvg: greenVSvg,
-    ilCarPlate: ilCarPlate,
     impersonatImg: impersonatImg,
     infoSvg: infoSvg,
     infoSvg2: infoSvg2,
@@ -25778,7 +25785,6 @@ var site_charging_icon = /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("i", {
     tripsSvg: tripsSvg,
     usFlagSvg: usFlagSvg,
     usFlagSvgFun: usFlagSvgFun,
-    usPlate: usPlate,
     userSvg: userSvg,
     vibretionSvg: vibretionSvg,
     videoHistorySvg: videoHistorySvg,
