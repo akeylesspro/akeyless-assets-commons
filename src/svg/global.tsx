@@ -1,5 +1,5 @@
 import { CountryOptions } from "akeyless-types-commons";
-import { formatCarNumber } from "../helpers";
+import { cn, formatCarNumber } from "../helpers";
 
 export const carMarkerSvg = (
     <svg xmlns="http://www.w3.org/2000/svg" width="33" height="47" viewBox="0 0 33 47" fill="none">
@@ -888,15 +888,24 @@ const initOptions = {
     filter: "saturate(100%)",
 };
 export const CarPlate = ({ carNumber, country, options = initOptions }: CarPlateProps) => {
-    return country === CountryOptions.IL ? (
-        <IlPlate carNumber={carNumber} options={options} />
-    ) : (
-        <UsPlate carNumber={carNumber} options={options} />
-    );
+    return country === CountryOptions.IL ? <IlPlate carNumber={carNumber} options={options} /> : <UsPlate carNumber={carNumber} options={options} />;
 };
+// export const IlPlate = ({ carNumber, options }: LocalCarPlateProps) => {
+//     return (
+//         <div className={cn(`relative text-black w-[135px] h-[25px]`, options.className || "")}>
+//             <img className="absolute w-full h-full z-10" style={{ filter: options.filter }} src="/images/car_plate.png" alt="plate" />
+//             <div
+//                 className={`absolute w-[86%] h-[90%] top-[1.5px] right-[1px] bottom-0 z-20 text-[19px] font-medium text-start`}
+//                 style={{ ...options.style, filter: options.filter }}
+//             >
+//                 <span className="font-[car_number] whitespace-nowrap overflow-hidden text-ellipsis">{formatCarNumber(carNumber)}</span>
+//             </div>
+//         </div>
+//     );
+// };
 export const IlPlate = ({ carNumber, options }: LocalCarPlateProps) => {
     return (
-        <div className={`car_plate ${options.className || ""} `}>
+        <div className={cn(`car_plate `, options.className || "")}>
             <img style={{ filter: options.filter }} src="/images/car_plate.png" alt="plate" />
             <div style={{ ...options.style, filter: options.filter }} className="center">
                 <span className="ellipsis">{formatCarNumber(carNumber)}</span>{" "}
@@ -907,7 +916,7 @@ export const IlPlate = ({ carNumber, options }: LocalCarPlateProps) => {
 
 export const UsPlate = ({ carNumber, options }: LocalCarPlateProps) => {
     return (
-        <div className={`car_plate ${options.className || ""} `}>
+        <div className={cn(`car_plate `, options.className || "")}>
             <div style={{ ...options.style, filter: options.filter }} className="bg-[#b9bebe] center">
                 <span className="text-[#102246]">{formatCarNumber(carNumber)}</span>{" "}
             </div>

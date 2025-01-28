@@ -1,3 +1,6 @@
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
 export const formatCarNumber = (car_number: string) => {
     var cn = car_number;
     if (cn?.length == 8) return `${cn[0]}${cn[1]}${cn[2]}-${cn[3]}${cn[4]}-${cn[5]}${cn[6]}${cn[7]}`;
@@ -25,3 +28,7 @@ export const calculateBearing = (startLat, startLng, endLat, endLng) => {
 
     return (bearing + 360) % 360;
 };
+
+export function cn(...inputs: ClassValue[]) {
+    return twMerge(clsx(inputs));
+}

@@ -23970,13 +23970,15 @@ var grayMotorcycleIcon = function(width, height, siteColor, className, viewBoxFo
     });
 };
 // src/helpers/index.ts
+var import_clsx = require("clsx");
+var import_tailwind_merge = require("tailwind-merge");
 var formatCarNumber = function(car_number) {
-    var cn = car_number;
-    if ((cn === null || cn === void 0 ? void 0 : cn.length) == 8) return "".concat(cn[0]).concat(cn[1]).concat(cn[2], "-").concat(cn[3]).concat(cn[4], "-").concat(cn[5]).concat(cn[6]).concat(cn[7]);
-    if ((cn === null || cn === void 0 ? void 0 : cn.length) == 7) return "".concat(cn[0]).concat(cn[1], "-").concat(cn[2]).concat(cn[3]).concat(cn[4], "-").concat(cn[5]).concat(cn[6]);
-    if ((cn === null || cn === void 0 ? void 0 : cn.length) == 6) return "".concat(cn[0]).concat(cn[1], "-").concat(cn[2]).concat(cn[3], "-").concat(cn[4]).concat(cn[5]);
-    if ((cn === null || cn === void 0 ? void 0 : cn.length) == 5) return "".concat(cn[0], "-").concat(cn[1]).concat(cn[2], "-").concat(cn[3]).concat(cn[4]);
-    return cn;
+    var cn2 = car_number;
+    if ((cn2 === null || cn2 === void 0 ? void 0 : cn2.length) == 8) return "".concat(cn2[0]).concat(cn2[1]).concat(cn2[2], "-").concat(cn2[3]).concat(cn2[4], "-").concat(cn2[5]).concat(cn2[6]).concat(cn2[7]);
+    if ((cn2 === null || cn2 === void 0 ? void 0 : cn2.length) == 7) return "".concat(cn2[0]).concat(cn2[1], "-").concat(cn2[2]).concat(cn2[3]).concat(cn2[4], "-").concat(cn2[5]).concat(cn2[6]);
+    if ((cn2 === null || cn2 === void 0 ? void 0 : cn2.length) == 6) return "".concat(cn2[0]).concat(cn2[1], "-").concat(cn2[2]).concat(cn2[3], "-").concat(cn2[4]).concat(cn2[5]);
+    if ((cn2 === null || cn2 === void 0 ? void 0 : cn2.length) == 5) return "".concat(cn2[0], "-").concat(cn2[1]).concat(cn2[2], "-").concat(cn2[3]).concat(cn2[4]);
+    return cn2;
 };
 var calculateBearing = function(startLat, startLng, endLat, endLng) {
     if (startLat === endLat || startLng === endLng) {
@@ -23995,6 +23997,12 @@ var calculateBearing = function(startLat, startLng, endLat, endLng) {
     var bearing = Math.atan2(y, x) * 180 / Math.PI;
     return (bearing + 360) % 360;
 };
+function cn() {
+    for(var _len = arguments.length, inputs = new Array(_len), _key = 0; _key < _len; _key++){
+        inputs[_key] = arguments[_key];
+    }
+    return (0, import_tailwind_merge.twMerge)((0, import_clsx.clsx)(inputs));
+}
 // src/svg/carsSvg/index.tsx
 var import_jsx_runtime11 = require("react/jsx-runtime");
 var allIcons = {
@@ -25370,7 +25378,7 @@ var CarPlate = function(param) {
 var IlPlate = function(param) {
     var carNumber = param.carNumber, options = param.options;
     return /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", {
-        className: "car_plate ".concat(options.className || "", " "),
+        className: cn("car_plate ", options.className || ""),
         children: [
             /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("img", {
                 style: {
@@ -25398,7 +25406,7 @@ var IlPlate = function(param) {
 var UsPlate = function(param) {
     var carNumber = param.carNumber, options = param.options;
     return /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("div", {
-        className: "car_plate ".concat(options.className || "", " "),
+        className: cn("car_plate ", options.className || ""),
         children: /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", {
             style: _object_spread_props(_object_spread({}, options.style), {
                 filter: options.filter

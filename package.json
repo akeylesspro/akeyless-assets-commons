@@ -12,9 +12,11 @@
     "description": "",
     "dependencies": {
         "akeyless-types-commons": "github:akeylesspro/akeyless-types-commons",
+        "clsx": "^2.1.1",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
-        "react-spinners": "^0.14.1"
+        "react-spinners": "^0.14.1",
+        "tailwind-merge": "^2.6.0"
     },
     "devDependencies": {
         "@swc/core": "^1.7.36",
