@@ -1,23 +1,26 @@
 {
     "name": "akeyless-assets-commons",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "scripts": {
         "build": "tsup src/index.tsx --format esm,cjs --dts",
-        "deploy": "npm run build && git add . && git commit -am 'build' && git push origin main",
-        "uc": "npm i git+https://github.com/akeylesspro/akeyless-types-commons.git"
+        "deploy": "npm run build && npm version patch --no-git-tag-version && npm publish",
+        "uc": "npm i akeyless-types-commons"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "description": "",
     "dependencies": {
-        "akeyless-types-commons": "github:akeylesspro/akeyless-types-commons",
+        "akeyless-types-commons": "^1.0.2",
         "clsx": "^2.1.1",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "react-spinners": "^0.14.1",
         "tailwind-merge": "^2.6.0"
     },
+    "files": [
+        "dist"
+    ],
     "devDependencies": {
         "@swc/core": "^1.7.36",
         "@types/react": "^18.3.11",
