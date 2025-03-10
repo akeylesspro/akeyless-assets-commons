@@ -1,6 +1,6 @@
 {
     "name": "akeyless-assets-commons",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "scripts": {
         "build": "tsup src/index.tsx --format esm,cjs --dts",
         "deploy": "npm run build && npm version patch --no-git-tag-version && npm publish",
