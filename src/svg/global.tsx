@@ -890,19 +890,7 @@ const initOptions = {
 export const CarPlate = ({ carNumber, country, options = initOptions }: CarPlateProps) => {
     return country === CountryOptions.IL ? <IlPlate carNumber={carNumber} options={options} /> : <UsPlate carNumber={carNumber} options={options} />;
 };
-// export const IlPlate = ({ carNumber, options }: LocalCarPlateProps) => {
-//     return (
-//         <div className={cn(`relative text-black w-[135px] h-[25px]`, options.className || "")}>
-//             <img className="absolute w-full h-full z-10" style={{ filter: options.filter }} src="/images/car_plate.png" alt="plate" />
-//             <div
-//                 className={`absolute w-[86%] h-[90%] top-[1.5px] right-[1px] bottom-0 z-20 text-[19px] font-medium text-start`}
-//                 style={{ ...options.style, filter: options.filter }}
-//             >
-//                 <span className="font-[car_number] whitespace-nowrap overflow-hidden text-ellipsis">{formatCarNumber(carNumber)}</span>
-//             </div>
-//         </div>
-//     );
-// };
+
 export const IlPlate = ({ carNumber, options }: LocalCarPlateProps) => {
     return (
         <div className={cn(`car_plate `, options.className || "")}>
