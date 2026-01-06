@@ -11,6 +11,18 @@ import { grayMotorcycleIcon, greenMotorcycleIcon, redMotorcycleIcon, yellowMotor
 import { Car, LastLocationCar } from "akeyless-types-commons";
 import { VehicleSvg } from "../../types";
 import { calculateBearing } from "../../helpers";
+
+export * from "./cranes1";
+export * from "./cranes2";
+export * from "./cars";
+export * from "./buss";
+export * from "./jeeps";
+export * from "./trucks";
+export * from "./scooters";
+export * from "./bicycles";
+export * from "./forklifts";
+export * from "./motorcycles";
+
 export const allIcons = {
     car: {
         red: redCarIcon,
